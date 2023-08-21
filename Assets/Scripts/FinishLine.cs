@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.GetType() == player.GetType())
         {
             print("Gewonnen");
         }
