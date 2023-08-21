@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6231691491472938463}
   - component: {fileID: 6698149461174445688}
   m_Layer: 0
-  m_Name: Finish
+  m_Name: FinishLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,3 +76,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c03fc462155694e9abf8e1089ec375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 8767027955255482561, guid: 08f27793f8d85334babd01814cc3e701, type: 3}
