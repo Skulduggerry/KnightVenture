@@ -8,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpVelocity = 50;
     private Rigidbody rb;
     private bool isOnGround;
+    public float gravityMultiplier = 2.0f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Physics.gravity *= gravityMultiplier;
     }
 
     // Update is called once per frame
