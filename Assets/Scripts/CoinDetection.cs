@@ -8,14 +8,17 @@ public class CoinDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetType() == coin.GetType())
+       
+        if (coin.CompareTag(other.gameObject.tag))
         {
             print("Grabbing coin..");
 
             AudioSource audioSource = other.GetComponent<AudioSource>(); // Hole die Audio Source vom aktuellen GameObject
-            audioSource.PlayOneShot(audioSource.clip,1f); // Münzklang abspielen
+            audioSource.Play(); // Münzklang abspielen
             
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+
+            GameManager.instance.IncreaseScore(1); // Punktestand um 1 erhöhen
         }
     }
 }

@@ -4,11 +4,34 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance = null;
+
     public int score = 0;
+
+    public int highScore = 0;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void IncreaseScore(int amount)
     {
-        // Increase the score by the given amount
         score += amount;
+      
+        print("New Score: " + score.ToString());
+        if (score > highScore)
+        {
+            highScore = score;
+            print("New high score: " + highScore);
+        }
     }
 }
