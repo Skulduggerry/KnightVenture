@@ -158,16 +158,22 @@ public class ThirdPersonControllerOld : MonoBehaviour
             Move();
         }
 
-        private void FixedUpdate()
-        {
-            Vector3 bottom = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
-
-        RaycastHit[] hits = Physics.RaycastAll(bottom, Vector3.up, _controller.height, GroundLayers, QueryTriggerInteraction.Ignore);
+    private void FixedUpdate()
+    {
+        Vector3 bottom = new Vector3(transform.position.x, transform.position.y + _controller.radius + 0.1f, transform.position.z);
+        RaycastHit[] hits = Physics.SphereCastAll(bottom, _controller.radius, Vector3.up, _controller.height - 0.1f, GroundLayers, QueryTriggerInteraction.Ignore);
         foreach(var hit in hits)
         {
+            var script = hit.collider.gameObject.GetComponent<BulletScript>();
+            if(script != null)
+            {
+                script.OnPlayerCollision();
+                return;
+            }
+            print("hit");
             _controller.Move(hit.normal * hit.distance);
         }
-        }
+    }
 
     private void LateUpdate()
         {

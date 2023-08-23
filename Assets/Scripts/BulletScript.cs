@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     public float despawnTime = 100;
     public float strength = 50;
     public float speed = 10;
+    public GameObject player;
     private bool hasHit = false;
     private Rigidbody rb;
 
@@ -28,6 +29,7 @@ public class BulletScript : MonoBehaviour
         hasHit = true;
         rb.isKinematic = false;
         rb.useGravity = true;
+        print("hit player");
     }
 
     void OnCollisionEnter(Collision collision)
@@ -38,6 +40,11 @@ public class BulletScript : MonoBehaviour
         rb.isKinematic = false;
         rb.useGravity = true;
 
-        print("Hit player");
+        if(player.CompareTag(collision.gameObject.tag)) {
+            OnPlayerCollision();
+            return;
+        }
+
+        print("Hit ground");
     }
 }

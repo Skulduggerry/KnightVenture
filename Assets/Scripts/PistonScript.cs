@@ -15,12 +15,10 @@ public class PistonScript : MonoBehaviour
     private float minZ;
     private float maxZ;
     private Transform headTransform;
-    private Rigidbody rb;
     
     void Start()
     {
         delay = initialDelay;
-        rb = GetComponentInChildren<Rigidbody>();
         headTransform = transform.Find("Head");
         minZ = headTransform.localPosition.z;
         maxZ = headTransform.Find("Tail").lossyScale.z + minZ;
@@ -40,8 +38,7 @@ public class PistonScript : MonoBehaviour
         if (expanding)
         {
             direction = Vector3.forward * expansionSpeed * Time.deltaTime;
-            direction = headTransform.TransformDirection(direction);
-            rb.MovePosition(rb.position + direction);
+            headTransform.Translate(direction, Space.Self);
             if(headTransform.localPosition.z >= maxZ)
             {
                 delay = delayExpanded;
@@ -51,8 +48,7 @@ public class PistonScript : MonoBehaviour
         }
 
         direction = Vector3.back * expansionSpeed * Time.deltaTime;
-        direction = headTransform.TransformDirection(direction);
-        rb.MovePosition(rb.position + direction);
+        headTransform.Translate(direction, Space.Self);
         if (headTransform.localPosition.z <= minZ)
         {
             delay = delayContracted;

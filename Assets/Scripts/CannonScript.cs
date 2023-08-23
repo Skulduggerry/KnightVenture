@@ -8,8 +8,7 @@ public class CannonScript : MonoBehaviour
     public GameObject player;
     public GameObject bullet;
     public float delay;
-    public float strength = 20;
-    public float explosionRadius = 5;
+    public float strength = 15;
     private GameObject target;
     private float timer;
 
@@ -19,19 +18,18 @@ public class CannonScript : MonoBehaviour
         if (!target) return;
 
         Vector3 origin = transform.Find("SpawnPoint").position;
-        Vector3 direction = target.transform.position - origin;
+        Vector3 dest = target.transform.position;
+        dest.y += target.GetComponent<CharacterController>().height / 2;
+        Vector3 direction = dest - origin;
         transform.LookAt(target.transform);
 
         timer -= Time.deltaTime;
         if (timer > 0) return;
 
-        /*RaycastHit[] result = Physics.RaycastAll(origin, direction, direction.magnitude);
-        if(result.Length > 1 ) 
-            return; */
         print("Spawn");
         timer = delay;
         GameObject spawned = Instantiate(bullet, origin, Quaternion.LookRotation(direction.normalized));
-        spawned.GetComponent<Rigidbody>().AddExplosionForce(strength, transform.Find("ExplosionPoint").position, explosionRadius);
+        spawned.GetComponent<Rigidbody>().AddForce(direction.normalized * strength, ForceMode.Impulse);
     }
 
     private void OnTriggerEnter(Collider other)
