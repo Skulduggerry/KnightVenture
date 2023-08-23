@@ -6,14 +6,17 @@ public class RotateCoin : MonoBehaviour
 { 
     public float rotationSpeed = 100f;
     public float movementSpeed = 1f;
-    public float minHeight = 0f;
-    public float maxHeight = 1f;
+    public float minHeightFromOrigin = 0f;
+    public float maxHeightFromOrigin = 1f;
+    private float minHeight;
+    private float maxHeight;
     private int direction = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        minHeight = transform.position.y + minHeightFromOrigin;
+        maxHeight = transform.position.y + maxHeightFromOrigin;
     }
 
     // Update is called once per frame
