@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class TimerText : MonoBehaviour
     void Start()
     {
         timerText = GetComponent<Text>();
-        timer = 100;
+        timer = 120;
     }
 
     // Update is called once per frame
@@ -21,8 +22,10 @@ public class TimerText : MonoBehaviour
         if (timer <= 0f)
         {
             timer = 0;
-         
-        }else
+            SceneManager.LoadScene(2);
+
+        }
+        else
         {
             timer -= Time.deltaTime;
         }
