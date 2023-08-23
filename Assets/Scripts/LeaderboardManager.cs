@@ -7,6 +7,17 @@ using UnityEngine.UI;
 
 public class LeaderboardManager : MonoBehaviour
 {
+    [SerializeField] private Text player1Text;
+    [SerializeField] private Text playert2Text;
+    [SerializeField] private Text player3Text;
+    [SerializeField] private Text player4Text;
+    [SerializeField] private Text player5Text;
+    [SerializeField] private Text player6Text;
+    [SerializeField] private Text player7Text;
+    [SerializeField] private Text player8Text;
+    [SerializeField] private Text player9Text;
+    [SerializeField] private Text player10Text;
+
     public class PlayerScore
     {
         public string playerName;
@@ -28,7 +39,7 @@ public class LeaderboardManager : MonoBehaviour
         };
 
         playerScores.Add(newScore);
-        playerScores = playerScores.OrderByDescending(p => p.score).Take(10).ToList(); // Sortieren und auf Top 10 beschränken
+        playerScores = playerScores.OrderByDescending(p => p.score).Take(5).ToList(); // Sortieren und auf Top 10 beschränken
 
         UpdatePlayerTexts();
     }
