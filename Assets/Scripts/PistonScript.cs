@@ -36,27 +36,25 @@ public class PistonScript : MonoBehaviour
             return;
         }
 
-        Vector3 position;
+        Vector3 direction;
         if (expanding)
         {
-            position = headTransform.localPosition + Vector3.forward * expansionSpeed * Time.deltaTime;
-            position = headTransform.TransformDirection(position);
-            rb.MovePosition(position);
+            direction = Vector3.forward * expansionSpeed * Time.deltaTime;
+            direction = headTransform.TransformDirection(direction);
+            rb.MovePosition(rb.position + direction);
             if(headTransform.localPosition.z >= maxZ)
             {
-                headTransform.localPosition = new Vector3(0, 0, maxZ);
                 delay = delayExpanded;
                 expanding = false;
             }
             return;
         }
 
-        position = headTransform.localPosition + Vector3.back * expansionSpeed * Time.deltaTime;
-        position = headTransform.TransformDirection(position);
-        rb.MovePosition(position);
+        direction = Vector3.back * expansionSpeed * Time.deltaTime;
+        direction = headTransform.TransformDirection(direction);
+        rb.MovePosition(rb.position + direction);
         if (headTransform.localPosition.z <= minZ)
         {
-            headTransform.localPosition = new Vector3(0, 0, minZ);
             delay = delayContracted;
             expanding = true;
         }
