@@ -11,9 +11,9 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void exitGame()
+    public void scoreboard()
     {
-        Application.Quit();
+        SceneManager.LoadScene(4);
     }
 
     // Start is called before the first frame update

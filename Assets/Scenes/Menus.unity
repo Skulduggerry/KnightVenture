@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 245104231}
   - component: {fileID: 245104235}
   - component: {fileID: 245104236}
+  - component: {fileID: 245104237}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -345,6 +346,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51644898127c18c4abcabed0a12a0c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &245104237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245104230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6439c6d8215920d4d951269d57904968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &456947643
@@ -726,7 +739,7 @@ GameObject:
   - component: {fileID: 1158400957}
   - component: {fileID: 1158400956}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: Scoreboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,13 +810,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 245104230}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 245104237}
+        m_TargetAssemblyTypeName: ZumScoreboard, Assembly-CSharp
+        m_MethodName: scoreboard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
