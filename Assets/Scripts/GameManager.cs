@@ -13,6 +13,18 @@ public class GameManager : MonoBehaviour
 
     private bool gameStarted = false;
 
+    void Start()
+    {
+        if (gameStarted == false)
+        {
+
+            gameStarted = true;
+            Debug.Log("Spiel wurde gestartet!");
+            SceneManager.LoadScene(0);
+
+        }
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -39,14 +51,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // Überprüfe, ob das Spiel gestartet wurde
-        if (gameStarted==false)
-        {
-            
-                gameStarted = true;
-                Debug.Log("Spiel wurde gestartet!");
-            SceneManager.LoadScene(0);
-
-        }
+       
 
     }
 }
