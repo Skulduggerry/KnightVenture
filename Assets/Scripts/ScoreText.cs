@@ -14,12 +14,9 @@ public class ScoreText : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(Input.GetButtonDown("Fire1"))
-        {
-            score += 1;
-        }
+        score = GameManager.instance.score;
         textComponent.text = "Score: " + score;
     }
 }

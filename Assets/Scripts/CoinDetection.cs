@@ -13,12 +13,16 @@ public class CoinDetection : MonoBehaviour
         {
             print("Grabbing coin..");
 
-            AudioSource audioSource = other.GetComponent<AudioSource>(); // Hole die Audio Source vom aktuellen GameObject
-            audioSource.Play(); // Münzklang abspielen
-            
-            //Destroy(other.gameObject);
+            AudioSource audioSource = other.GetComponent<AudioSource>();
+            StartCoroutine(PlaySoundAndDestroy(audioSource, other.gameObject));
 
             GameManager.instance.IncreaseScore(1); // Punktestand um 1 erhöhen
         }
+    }
+    private IEnumerator PlaySoundAndDestroy(AudioSource audioSource, GameObject coinObject)
+    {
+        audioSource.Play(); // Münzklang abspielen
+        yield return new WaitForSeconds(audioSource.clip.length); // Warte bis der Sound zu Ende ist
+        Destroy(coinObject); // Münze zerstören
     }
 }

@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     {
         score += amount;
       
-        print("New Score: " + score.ToString());
         if (score > highScore)
         {
             highScore = score;
