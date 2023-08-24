@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7761726976288165694, guid: 60393a9becfda4a4593e7ca6f922b1e8, type: 3}
+      propertyPath: maxLifes
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -484,8 +488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8017, y: -24.937}
-  m_SizeDelta: {x: 824.155, y: 366.37}
+  m_AnchoredPosition: {x: -1.8017, y: -0.00077248}
+  m_SizeDelta: {x: 824.155, y: 449.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753636184
 MonoBehaviour:
@@ -829,7 +833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 205.44043, y: 104}
+  m_AnchoredPosition: {x: 232, y: 154}
   m_SizeDelta: {x: 184.8809, y: 46.1491}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733573732

@@ -926,6 +926,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7761726976288165694, guid: 60393a9becfda4a4593e7ca6f922b1e8, type: 3}
+      propertyPath: maxLifes
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761726976288165694, guid: 60393a9becfda4a4593e7ca6f922b1e8, type: 3}
       propertyPath: canvasToActivate
       value: 
       objectReference: {fileID: 0}

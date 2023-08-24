@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public int score = 0;
 
-    public int maxLifes = 3;
+    public int maxLifes = 7;
     public int lifes;
 
     void Awake()
@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             instance = this;
         }
-        DontDestroyOnLoad(gameObject);
         lifes = maxLifes;
     }
 
@@ -34,8 +33,6 @@ public class GameManager : MonoBehaviour
     public void ToLevel1()
     {
         print("Load level 1");
-        ResetScore();
-        ResetHealth();
         SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
     }
 
@@ -48,7 +45,6 @@ public class GameManager : MonoBehaviour
     public void ToLevel2()
     {
         print("Load level 2");
-        ResetHealth();
         SceneManager.LoadScene("Scene", LoadSceneMode.Single);
     }
 
@@ -64,14 +60,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Lose", LoadSceneMode.Single);
     }
 
-    public void ResetHealth()
+    public void gameCursor(bool gameCursor)
     {
-        lifes = maxLifes;
-    }
-
-    public void ResetScore()
-    {
-        score = 0;
+        Cursor.visible = !gameCursor;
+        Cursor.lockState = gameCursor ? CursorLockMode.Locked : CursorLockMode.None;
     }
 
     public void DecreaseHealth()

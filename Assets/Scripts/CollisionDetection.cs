@@ -26,7 +26,7 @@ public class CollisionDetection : MonoBehaviour
             return;
         }
 
-        if (coin.CompareTag(other.gameObject.tag))
+        if (coin.CompareTag(other.tag))
         {
             print("Grabbing coin..");
 
@@ -37,23 +37,18 @@ public class CollisionDetection : MonoBehaviour
             return;
         }
 
-        if (crown.CompareTag(other.tag))
-        {
-            print("Gewonnen");
-            print(other.transform.position);
-            //GameManager.instance.AddPlayerScore();
-            GameManager.instance.ToWinScreen2();
-            return;
-        }
-
-
         if (sword.CompareTag(other.tag))
         {
             print("Nächstes Level");
-            //GameManager.instance.AddPlayerScore();
             GameManager.instance.ToWinScreen1();
+            return;
         }
 
+        if (crown.CompareTag(other.tag))
+        {
+            print("Gewonnen");
+            GameManager.instance.ToWinScreen2();
+        }
     }
 
     private IEnumerator PlaySoundAndDestroy(AudioSource audioSource, GameObject coinObject)
