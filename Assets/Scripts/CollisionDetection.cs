@@ -22,5 +22,22 @@ public class CollisionDetection : MonoBehaviour
             other.GetComponent<BulletScript>().OnPlayerHit();
             return;
         }
+
+        if (coin.CompareTag(other.gameObject.tag))
+        {
+            print("Grabbing coin..");
+
+            AudioSource audioSource = other.GetComponent<AudioSource>();
+            StartCoroutine(PlaySoundAndDestroy(audioSource, other.gameObject));
+
+            GameManager.instance.IncreaseScore(1); // Punktestand um 1 erhöhen
+        }
+    }
+
+    private IEnumerator PlaySoundAndDestroy(AudioSource audioSource, GameObject coinObject)
+    {
+        audioSource.Play(); // Münzklang abspielen
+        yield return new WaitForSeconds(audioSource.clip.length); // Warte bis der Sound zu Ende ist
+        Destroy(coinObject); // Münze zerstören
     }
 }
