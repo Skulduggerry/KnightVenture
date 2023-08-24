@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public int maxLifes = 3;
     private int lifes;
 
-    private bool gameStarted = false;
+    private bool gameStarted = true;
 
     void Start()
     {
