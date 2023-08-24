@@ -586,8 +586,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Du bist gestorben und wurdest nicht zum Ritter geschlagen. Versuche dein
-    Gl\xFCck nochmal! Mit etwas Mut kannst du zum neuen K\xF6nig werden!"
+  m_Text: "Du bist gestorben und nicht zum K\xF6nig in Knightventure aufgestiegen.
+    Versuche dein Gl\xFCck nochmal oder gib dich dem Sensemann hin! "
 --- !u!222 &1581462823
 CanvasRenderer:
   m_ObjectHideFlags: 0
