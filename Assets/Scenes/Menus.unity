@@ -593,9 +593,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 812880232}
-        m_TargetAssemblyTypeName: NamenSpeichern, Assembly-CSharp
-        m_MethodName: Absenden
+      - m_Target: {fileID: 245104235}
+        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+        m_MethodName: startGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -605,9 +605,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 245104235}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: startGame
+      - m_Target: {fileID: 812880232}
+        m_TargetAssemblyTypeName: NamenSpeichern, Assembly-CSharp
+        m_MethodName: Absenden
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 2.1509712
+  m_AspectRatio: 2.1089256
 --- !u!1 &1415225195
 GameObject:
   m_ObjectHideFlags: 0
