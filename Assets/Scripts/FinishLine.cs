@@ -9,5 +9,13 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print("collision");
+        if (player.CompareTag(other.gameObject.tag))
+        {
+            print("Gewonnen");
+            //GameManager.instance.AddPlayerScore();
+            //SceneManager.LoadScene(5);
+            
+        }
     }
 }

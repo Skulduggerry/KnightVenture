@@ -8,17 +8,27 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     public Text healthText;
-  
+    public float health;
     // Start is called before the first frame update
     void Start()
     {
         healthText = GetComponent<Text>();
-       
+        health = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Health " + GameManager.instance.lifes;
+        if (health <= 0f)
+        {
+            health = 0;
+            SceneManager.LoadScene(2);
+
+        }
+
+
+        healthText.text = "Health " + health;
+
+
     }
 }

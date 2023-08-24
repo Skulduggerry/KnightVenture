@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 
 public class CollisionDetection : MonoBehaviour
@@ -8,6 +9,8 @@ public class CollisionDetection : MonoBehaviour
 
     public GameObject bullet;
     public GameObject coin;
+    public GameObject crown;
+    public GameObject sword;
     private CapsuleCollider pistonCollider;
 
     private void Start()
@@ -17,7 +20,7 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(bullet.CompareTag(other.tag))
+        if (bullet.CompareTag(other.tag))
         {
             other.GetComponent<BulletScript>().OnPlayerHit();
             return;
@@ -31,7 +34,26 @@ public class CollisionDetection : MonoBehaviour
             StartCoroutine(PlaySoundAndDestroy(audioSource, other.gameObject));
 
             GameManager.instance.IncreaseScore(1); // Punktestand um 1 erhöhen
+            return;
         }
+
+        if (crown.CompareTag(other.tag))
+        {
+            print("Gewonnen");
+            print(other.transform.position);
+            //GameManager.instance.AddPlayerScore();
+            GameManager.instance.ToWinScreen2();
+            return;
+        }
+
+
+        if (sword.CompareTag(other.tag))
+        {
+            print("Nächstes Level");
+            //GameManager.instance.AddPlayerScore();
+            GameManager.instance.ToWinScreen1();
+        }
+
     }
 
     private IEnumerator PlaySoundAndDestroy(AudioSource audioSource, GameObject coinObject)

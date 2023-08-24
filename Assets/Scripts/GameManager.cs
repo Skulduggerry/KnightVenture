@@ -10,12 +10,6 @@ public class GameManager : MonoBehaviour
     public int maxLifes = 3;
     public int lifes;
 
-    void Start()
-    {
-            Debug.Log("Spiel wurde gestartet!");
-            //ToMainMenu();
-    }
-
     void Awake()
     {
         if (instance == null)
