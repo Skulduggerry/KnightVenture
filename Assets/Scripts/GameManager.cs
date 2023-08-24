@@ -1,33 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
     public int score = 0;
-    public string playerName = null;
 
-    public int highScore = 0;
     public int maxLifes = 3;
-    private int lifes;
-
-    private bool gameStarted = true;
+    public int lifes;
 
     void Start()
     {
-        if (gameStarted == false)
-        {
-            gameStarted = true;
             Debug.Log("Spiel wurde gestartet!");
-            SceneManager.LoadScene(0);
-
-        }
+            //ToMainMenu();
     }
 
     void Awake()
@@ -39,30 +25,58 @@ public class GameManager : MonoBehaviour
         else if (instance != this)
         {
             Destroy(gameObject);
+            instance = this;
         }
         DontDestroyOnLoad(gameObject);
     }
 
-    public void startGame()
+    public void ToMainMenu()
+    {
+        print("Load main menu");
+        SceneManager.LoadScene("Menus", LoadSceneMode.Single);
+    }
+
+    public void ToLevel1()
+    {
+        print("Load level 1");
+        ResetScore();
+        ResetHealth();
+        SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
+    }
+
+    public void ToWinScreen1()
+    {
+        print("Load win 1");
+        SceneManager.LoadScene("NextLevel", LoadSceneMode.Single);
+    }
+
+    public void ToLevel2()
+    {
+        print("Load level 2");
+        ResetHealth();
+        SceneManager.LoadScene("Scene", LoadSceneMode.Single);
+    }
+
+    public void ToWinScreen2()
+    {
+        print("Load win 2");
+        SceneManager.LoadScene("Win", LoadSceneMode.Single);
+    }
+
+    public void ToLose()
+    {
+        print("Load lose");
+        SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+    }
+
+    public void ResetHealth()
+    {
+        lifes = maxLifes;
+    }
+
+    public void ResetScore()
     {
         score = 0;
-        playerName = "Lara";
-        //NamenSpeichern.instance.myInputField.text
-        lifes = maxLifes;
-        SceneManager.LoadScene(1);
-
-    }
-
-    public void neustart()
-    {
-        lifes = maxLifes;
-        SceneManager.LoadScene(0);
-    }
-
-    public void scoreboard()
-    {
-        SceneManager.LoadScene(4);
-        UpdatePlayerTexts();
     }
 
     public void DecreaseHealth()
@@ -78,52 +92,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore(int amount)
     {
         score += amount;
-
-        if (score > highScore)
-        {
-            highScore = score;
-            print("New high score: " + highScore);
-        }
-    }
-
-    public class PlayerScore
-    {
-        public string playerName1;
-        public int playerScore;
-    }
-
-    public static List<PlayerScore> playerScores = new List<PlayerScore>();
-    public List<Text> playerTexts;
-
-    public void AddPlayerScore()
-    {
-        string playerName1 = playerName;
-        int score1 = score;
-
-        PlayerScore newScore = new PlayerScore
-        {
-            playerName1 = playerName,
-            playerScore = score1
-        };
-
-        playerScores.Add(newScore);
-        playerScores = playerScores.OrderByDescending(p => p.playerScore).Take(5).ToList(); // Sortieren und auf Top 10 beschränken
-    }
-
-    public void UpdatePlayerTexts()
-    {
-        for (int i = 0; i < playerTexts.Count; i++)
-        {
-            if (i < playerScores.Count)
-            {
-                playerTexts[i].text = $"{playerScores[i].playerName1}: {playerScores[i].playerScore}";
-            }
-            else
-            {
-                playerTexts[i].text = "";
-            }
-
-        }
+        Debug.Log("New score: " + score);
     }
 }
 
