@@ -7,24 +7,34 @@ using UnityEngine.UI;
 
 public class LeaderboardManager : MonoBehaviour
 {
-    [SerializeField] private Text player1Text;
-    [SerializeField] private Text playert2Text;
-    [SerializeField] private Text player3Text;
-    [SerializeField] private Text player4Text;
-    [SerializeField] private Text player5Text;
-    
+
+    public static LeaderboardManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
     public class PlayerScore
     {
         public string playerName;
         public int score;
     }
 
-    public List<PlayerScore> playerScores = new List<PlayerScore>();
-    public List<Text> playerTexts = new List<Text>();
+    public List<PlayerScore> playerScores;
+    public List<Text> playerTexts;
 
     public void AddPlayerScore()
     {
-        string playerName = "";
+        string playerName = "__";
         int score = GameManager.instance.score;
 
         PlayerScore newScore = new PlayerScore
@@ -51,6 +61,8 @@ public class LeaderboardManager : MonoBehaviour
             {
                 playerTexts[i].text = "";
             }
+
         }
     }
 }
+    
