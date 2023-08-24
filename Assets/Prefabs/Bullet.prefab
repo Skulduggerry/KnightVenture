@@ -149,4 +149,4 @@ MonoBehaviour:
   despawnTime: 3
   strength: 50
   speed: 10
-  player: {fileID: 1377878309915269399, guid: 586587e4bba291c44837b80d736821b3, type: 3}
+  player: {fileID: 1377878309915269399, guid: 973b8cf646f095846b90d699ab643896, type: 3}
