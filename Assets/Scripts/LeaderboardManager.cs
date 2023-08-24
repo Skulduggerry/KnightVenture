@@ -27,7 +27,7 @@ public class LeaderboardManager : MonoBehaviour
 
     public void AddPlayerScore()
     {
-        string playerName = "__";
+        string playerName = NamenSpeichern.instance.storedText;
         int score = GameManager.instance.score;
 
         PlayerScore newScore = new PlayerScore

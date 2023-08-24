@@ -10,7 +10,6 @@ public class DeathManager : MonoBehaviour
     {
         if (transform.position.y < -50)
         {
-            print("Du hast leider verloren!");
             SceneManager.LoadScene(2);
 
         }
