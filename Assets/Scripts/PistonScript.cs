@@ -15,6 +15,11 @@ public class PistonScript : MonoBehaviour
     private float minZ;
     private float maxZ;
     private Transform headTransform;
+
+    public float Speed
+    {
+        get { return expanding ? expansionSpeed : contractSpeed; }
+    }
     
     void Start()
     {
@@ -22,8 +27,6 @@ public class PistonScript : MonoBehaviour
         headTransform = transform.Find("Head");
         minZ = headTransform.localPosition.z;
         maxZ = headTransform.Find("Tail").lossyScale.z + minZ;
-        print(minZ);
-        print(maxZ);
     }
 
     void FixedUpdate()

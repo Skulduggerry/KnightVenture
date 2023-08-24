@@ -11,7 +11,7 @@ public class BulletScript : MonoBehaviour
     private bool hasHit = false;
     private Rigidbody rb;
 
-    private void Awake()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -24,29 +24,19 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void OnPlayerCollision()
+    public void OnPlayerHit()
     {
         if (hasHit) return;
         hasHit = true;
-        rb.isKinematic = false;
-        rb.useGravity = true;
         GameManager.instance.DecreaseHealth();
-        print("hit player");
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (hasHit) return;
 
-        hasHit = true;
         rb.isKinematic = false;
         rb.useGravity = true;
-
-        if(player.CompareTag(collision.gameObject.tag)) {
-            OnPlayerCollision();
-            return;
-        }
-
-        print("Hit ground");
+        hasHit = true;
     }
 }

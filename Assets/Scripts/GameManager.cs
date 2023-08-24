@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public void DecreaseHealth()
     {
         --lifes;
+        Debug.Log($"Lifes {lifes}");
         if(lifes == 0)
         {
             SceneManager.LoadScene("Lose", LoadSceneMode.Single);
