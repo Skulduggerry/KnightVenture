@@ -3,7 +3,62 @@ guid: e78a1a193d854af4092bf863b872baeb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13453_JeweledCrownMat
+    second: {fileID: 2100000, guid: 3658472b9cd484a4bba102bbcc1aa305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13453_JeweledCrown_top2Mat
+    second: {fileID: 2100000, guid: 3658472b9cd484a4bba102bbcc1aa305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13453_JeweledCrown_topMat
+    second: {fileID: 2100000, guid: 3658472b9cd484a4bba102bbcc1aa305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gem_blueMat
+    second: {fileID: 2100000, guid: 492b00d8faa8e444c8cda912affaf9ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gem_greenMat
+    second: {fileID: 2100000, guid: f4c78b93fd055674a9b97aa83a7fcd7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gem_holder2Mat
+    second: {fileID: 2100000, guid: 3658472b9cd484a4bba102bbcc1aa305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gem_holderMat
+    second: {fileID: 2100000, guid: 3658472b9cd484a4bba102bbcc1aa305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gem_pinkMat
+    second: {fileID: 2100000, guid: 9844d3ed4e1571641a62bfef20a655f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gem_white2Mat
+    second: {fileID: 2100000, guid: 0130f0dc947a48f4b82b1b2fe99b9461, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gem_whiteMat
+    second: {fileID: 2100000, guid: 0130f0dc947a48f4b82b1b2fe99b9461, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pearlMat
+    second: {fileID: 2100000, guid: 3658472b9cd484a4bba102bbcc1aa305, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

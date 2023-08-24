@@ -12,15 +12,8 @@ public class LeaderboardManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
+        instance = this;
+        print("hello, world");
     }
 
     public class PlayerScore
@@ -29,12 +22,12 @@ public class LeaderboardManager : MonoBehaviour
         public int score;
     }
 
-    public List<PlayerScore> playerScores;
+    public static List<PlayerScore> playerScores = new List<PlayerScore>();
     public List<Text> playerTexts;
 
     public void AddPlayerScore()
     {
-        string playerName = "__";
+        string playerName = NamenSpeichern.instance.storedText;
         int score = GameManager.instance.score;
 
         PlayerScore newScore = new PlayerScore
@@ -45,11 +38,9 @@ public class LeaderboardManager : MonoBehaviour
 
         playerScores.Add(newScore);
         playerScores = playerScores.OrderByDescending(p => p.score).Take(5).ToList(); // Sortieren und auf Top 10 beschränken
-
-        UpdatePlayerTexts();
     }
 
-    void UpdatePlayerTexts()
+   public  void UpdatePlayerTexts()
     {
         for (int i = 0; i < playerTexts.Count; i++)
         {
