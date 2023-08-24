@@ -7,7 +7,7 @@ public class ScoreboardLoad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<GameManager>().UpdatePlayerTexts();
+        GameManager.instance.UpdatePlayerTexts();
     }
 
     // Update is called once per frame

@@ -62,7 +62,9 @@ public class GameManager : MonoBehaviour
     public void scoreboard()
     {
         SceneManager.LoadScene(4);
+        UpdatePlayerTexts();
     }
+
     public void DecreaseHealth()
     {
         --lifes;
