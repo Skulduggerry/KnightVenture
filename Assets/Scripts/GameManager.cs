@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
 
     public int highScore = 0;
+    public int lifes = 3;
 
     private bool gameStarted = false;
 
@@ -36,6 +37,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void DecreaseHealth()
+    {
+        --lifes;
+        if(lifes == 0)
+        {
+            SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+        }
     }
 
     public void IncreaseScore(int amount)

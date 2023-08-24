@@ -162,9 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 647ef5690acd56244b177efecac42a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1377878309915269399, guid: 586587e4bba291c44837b80d736821b3, type: 3}
+  player: {fileID: 1377878309915269399, guid: 973b8cf646f095846b90d699ab643896, type: 3}
   bullet: {fileID: 5154504936378467134, guid: 1617a007ffbfe1b459293b4b2f2aeb78, type: 3}
-  delay: 10
+  delay: 5
+  strength: 15
 --- !u!135 &9026136823360474319
 SphereCollider:
   m_ObjectHideFlags: 0
