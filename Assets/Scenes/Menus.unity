@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 2.1089256
+  m_AspectRatio: 2.1509712
 --- !u!1 &1415225195
 GameObject:
   m_ObjectHideFlags: 0
