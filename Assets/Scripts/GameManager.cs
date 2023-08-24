@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     public int score = 0;
+    public string playerName;
 
     public int highScore = 0;
-    public int lifes = 3;
+    public int maxLifes = 3;
+    private int lifes;
 
     private bool gameStarted = false;
 
@@ -18,8 +20,8 @@ public class GameManager : MonoBehaviour
     {
         if (gameStarted == false)
         {
-
             gameStarted = true;
+            lifes = maxLifes;
             Debug.Log("Spiel wurde gestartet!");
             SceneManager.LoadScene(0);
 
@@ -58,12 +60,6 @@ public class GameManager : MonoBehaviour
             highScore = score;
             print("New high score: " + highScore);
         }
-    }
-    private void Update()
-    {
-        // Überprüfe, ob das Spiel gestartet wurde
-       
-
     }
 }
 
