@@ -71,6 +71,12 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = enabled ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
+    public void Quit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
+
     public void DecreaseHealth()
     {
         --lifes;
