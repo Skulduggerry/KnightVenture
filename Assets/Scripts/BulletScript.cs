@@ -26,9 +26,11 @@ public class BulletScript : MonoBehaviour
 
     public void OnPlayerCollision()
     {
+        if (hasHit) return;
         hasHit = true;
         rb.isKinematic = false;
         rb.useGravity = true;
+        GameManager.instance.DecreaseHealth();
         print("hit player");
     }
 
