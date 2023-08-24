@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    public AudioClip coinDespawnSound;
 
     public int score = 0;
-
     public int maxLifes = 7;
     public int lifes;
 
@@ -87,10 +87,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void IncreaseScore(int amount)
+    public void PickupCoin(Vector3 location)
     {
-        score += amount;
-        Debug.Log("New score: " + score);
+       ++score;
+        Debug.Log($"New score: {score}");
+        AudioSource.PlayClipAtPoint(coinDespawnSound, location);
     }
 }
 

@@ -29,11 +29,8 @@ public class CollisionDetection : MonoBehaviour
         if (coin.CompareTag(other.tag))
         {
             print("Grabbing coin..");
-
-            AudioSource audioSource = other.GetComponent<AudioSource>();
-            StartCoroutine(PlaySoundAndDestroy(audioSource, other.gameObject));
-
-            GameManager.instance.IncreaseScore(1); // Punktestand um 1 erhöhen
+            GameManager.instance.PickupCoin(other.transform.position); // Punktestand um 1 erhöhen
+            Destroy(other.gameObject);
             return;
         }
 
@@ -49,12 +46,5 @@ public class CollisionDetection : MonoBehaviour
             print("Gewonnen");
             GameManager.instance.ToWinScreen2();
         }
-    }
-
-    private IEnumerator PlaySoundAndDestroy(AudioSource audioSource, GameObject coinObject)
-    {
-        audioSource.Play(); // Münzklang abspielen
-        yield return new WaitForSeconds(audioSource.clip.length); // Warte bis der Sound zu Ende ist
-        Destroy(coinObject); // Münze zerstören
     }
 }
