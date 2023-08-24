@@ -667,8 +667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db79780d90c8f7d4b9ada8485fded792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: {fileID: 752355221}
-  myInputField: {fileID: 1996727207}
 --- !u!1 &1038369380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 2.1089256
+  m_AspectRatio: 2.1219356
 --- !u!1 &1415225195
 GameObject:
   m_ObjectHideFlags: 0
