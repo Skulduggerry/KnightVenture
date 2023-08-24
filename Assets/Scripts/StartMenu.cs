@@ -9,10 +9,8 @@ public class StartMenu : MonoBehaviour
     
     public void startGame()
     {
-        if (NamenSpeichern.instance.myInputField != null)
-        {
+        
             SceneManager.LoadScene(1);
-        }
             
     }
 
