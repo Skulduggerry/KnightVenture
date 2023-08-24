@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialDelay: 3
   expansionSpeed: 2
-  contractSpeed: 5
+  contractSpeed: 2
   delayExpanded: 5
   delayContracted: 5
 --- !u!1 &2802381059001925380
