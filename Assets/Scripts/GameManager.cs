@@ -27,43 +27,48 @@ public class GameManager : MonoBehaviour
     public void ToMainMenu()
     {
         print("Load main menu");
+        ShowCursor(true);
         SceneManager.LoadScene("Menus", LoadSceneMode.Single);
     }
 
     public void ToLevel1()
     {
         print("Load level 1");
+        ShowCursor(false);
         SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
     }
 
     public void ToWinScreen1()
     {
         print("Load win 1");
+        ShowCursor(true);
         SceneManager.LoadScene("NextLevel", LoadSceneMode.Single);
     }
 
     public void ToLevel2()
     {
         print("Load level 2");
+        ShowCursor(false);
         SceneManager.LoadScene("Scene", LoadSceneMode.Single);
     }
 
     public void ToWinScreen2()
     {
         print("Load win 2");
+        ShowCursor(true);
         SceneManager.LoadScene("Win", LoadSceneMode.Single);
     }
 
     public void ToLose()
     {
         print("Load lose");
+        ShowCursor(true);
         SceneManager.LoadScene("Lose", LoadSceneMode.Single);
     }
 
-    public void gameCursor(bool gameCursor)
+    public void ShowCursor(bool enabled)
     {
-        Cursor.visible = !gameCursor;
-        Cursor.lockState = gameCursor ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.lockState = enabled ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
     public void DecreaseHealth()
