@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Lifes {lifes}");
         if(lifes == 0)
         {
-            SceneManager.LoadScene("Lose", LoadSceneMode.Single);
+            ToLose();
         }
     }
 
