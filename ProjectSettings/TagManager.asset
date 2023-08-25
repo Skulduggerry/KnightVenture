@@ -8,6 +8,8 @@ TagManager:
   - CinemachineTarget
   - Bullet
   - Piston
+  - Crown
+  - Sword
   layers:
   - Default
   - TransparentFX

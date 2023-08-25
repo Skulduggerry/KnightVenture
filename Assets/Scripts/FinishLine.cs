@@ -13,8 +13,8 @@ public class FinishLine : MonoBehaviour
         if (player.CompareTag(other.gameObject.tag))
         {
             print("Gewonnen");
-            GameManager.instance.AddPlayerScore();
-            SceneManager.LoadScene(3);
+            //GameManager.instance.AddPlayerScore();
+            //SceneManager.LoadScene(5);
             
         }
     }

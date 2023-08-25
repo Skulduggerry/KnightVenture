@@ -8,12 +8,11 @@ using UnityEngine.UI;
 public class TimerText : MonoBehaviour
 {
     public  Text timerText;
-    public float timer;
+    public float timer = 45;
     // Start is called before the first frame update
     void Start()
     {
         timerText = GetComponent<Text>();
-        timer = 120;
     }
 
     // Update is called once per frame
@@ -22,7 +21,7 @@ public class TimerText : MonoBehaviour
         if (timer <= 0f)
         {
             timer = 0;
-            SceneManager.LoadScene(2);
+            GameManager.instance.ToLose();
 
         }
         else

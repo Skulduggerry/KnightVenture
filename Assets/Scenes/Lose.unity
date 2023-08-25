@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.533, y: -0.2994}
-  m_SizeDelta: {x: 895.2007, y: 399}
+  m_AnchoredPosition: {x: -8, y: 0.001018}
+  m_SizeDelta: {x: 895.2007, y: 449.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292321140
 MonoBehaviour:
@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7761726976288165694, guid: 60393a9becfda4a4593e7ca6f922b1e8, type: 3}
+      propertyPath: maxLifes
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -561,8 +565,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.7246, y: 46.3705}
-  m_SizeDelta: {x: 401.7974, y: 180.458}
+  m_AnchoredPosition: {x: 275.86, y: -125.83}
+  m_SizeDelta: {x: 248.2846, y: 198.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581462822
 MonoBehaviour:
@@ -577,7 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3679245, g: 0.071733676, b: 0.071733676, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -962,7 +966,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1220506811}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: neustart
+        m_MethodName: ToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

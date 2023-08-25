@@ -576,7 +576,7 @@ MonoBehaviour:
   GroundLayers:
     serializedVersion: 2
     m_Bits: 1
-  CinemachineCameraTarget: {fileID: 2070925441746177671, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+  CinemachineCameraTarget: {fileID: 1256388821777028813}
   TopClamp: 70
   BottomClamp: -30
   CameraAngleOverride: 0
@@ -712,6 +712,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5154504936378467134, guid: 1617a007ffbfe1b459293b4b2f2aeb78, type: 3}
   coin: {fileID: 8022482287407946208, guid: a15bc99e94b65a740af671de52c1d713, type: 3}
+  crown: {fileID: 6129874992602420312, guid: fcacdf3e63cb8b74ca869072ef8bb600, type: 3}
+  sword: {fileID: 4334314812708720168, guid: edccbf15fadd9704cb7a2020a492b120, type: 3}
 --- !u!1 &1711144382219472651
 GameObject:
   m_ObjectHideFlags: 0
